@@ -1,0 +1,25 @@
+
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.change-bg{
+    border-radius: 5px;
+    border-style: none;
+    font-weight: bolder;
+    font-size: 1.1rem;
+    padding:1rem;
+    transition: all .6s ease-in-out;
+}
+.change-bg:hover{
+    cursor: pointer;
+}
+.change-bg:active{
+    transform: scale(0.9);
+    box-shadow:0 3px 15px -2px;
+}
