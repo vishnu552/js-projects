@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/696bf1e6dc.js" crossorigin="anonymous" defer></script>
+    <script src="script.js" defer></script>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="content">
+        <div class="images">
+
+            <img src="img/img1.png" alt="img1">
+            <img src="img/img2.png" alt="img2">
+            <img src="img/img3.png" alt="img3">
+            <img src="img/img4.jpg" alt="img4">
+            <img src="img/img5.png" alt="img5">
+        </div>
+        <div class="btn-slider">
+            <span class="dots" onclick="btn_slide(1)"></span>
+            <span class="dots" onclick="btn_slide(2)"></span>
+            <span class="dots" onclick="btn_slide(3)"></span>
+            <span class="dots" onclick="btn_slide(4)"></span>
+            <span class="dots" onclick="btn_slide(5)"></span>
+        </div>
+        <div class="btn-left btn" onclick="side_slide(-1)"><i class="fa-solid fa-arrow-left"></i></div>
+        <div class=" btn-right btn" onclick="side_slide(1)"><i class="fa-solid fa-arrow-right"></i></div>
+    </div>
+    <script>
+        const img = document.querySelectorAll('img'),
+          sliders = document.querySelectorAll('.btn-slider span')
+        let indexValue=1;
+        sliders[indexValue-1].style.backgroundColor='gold'
+        showImg(indxValue);
+        function btn_slide(e){ showImg(indexValue = e)};
+        function side_slide(e){showImg(indexValue += e)};
+        function showImg(e){
+          if(e>img.length){
+            indexValue=1
+          }
+          if(e<1){
+            indexValue=img.length
+          }
+          for(let i=0;i<img.length;i++){
+            img[i].style.display='none'
+          }
+          for(let i=0;i<img.length;i++){
+            sliders[i].style.backgroundColor='azure'
+          }
+          img[indexValue-1].style.display='block'
+          sliders[indexValue-1].style.backgroundColor='gold'
+        }
+
+    </script>
+</body>
+</html>
